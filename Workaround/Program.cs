@@ -1,4 +1,6 @@
-﻿//Degiskenler();
+﻿using Business.Concrete;
+using Entities.Concrete;
+//Degiskenler();
 //Vatandas vatandas1 = new Vatandas();
 
 //SelamVer("Engin");
@@ -32,22 +34,30 @@
 //sayi2 = 300;
 //Console.WriteLine(sayi1);//10 value type olduğu için 
 
-List<string> listSehirler = new List<string> { "Ankara", "İstanbul", "Paris" };
-listSehirler.Add("new Ankara");
 
-foreach (string str in listSehirler)
-{
-    Console.WriteLine(str);
-}
 
-void SelamVer(string isim="noname")//static main method olmadığı için yazmadım
+//List<string> listSehirler = new List<string> { "Ankara", "İstanbul", "Paris" };
+//listSehirler.Add("new Ankara");
+
+//foreach (string str in listSehirler)
+//{
+//    Console.WriteLine(str);
+//}
+
+Person person1 = new Person { FirstName = "Burak", LastName = "Usluer", NationalIdentity = 123, DateOfBirthYear = 1992 };
+PttManager pttManager = new PttManager(new PersonManager());
+pttManager.GiveMask(person1);
+
+
+
+void SelamVer(string isim = "noname")//static main method olmadığı için yazmadım
 {
     Console.WriteLine($"Merhaba {isim}");
 }
 
-int Topla(int sayi1=5,int sayi2 = 20)
+int Topla(int sayi1 = 5, int sayi2 = 20)
 {
-    int sonuc=sayi1 + sayi2;
+    int sonuc = sayi1 + sayi2;
     Console.WriteLine($"Toplam : {sonuc}");
     return sonuc;
 }

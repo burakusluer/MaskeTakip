@@ -17,11 +17,11 @@ public class ForeignerManager : IApplicantService
 
     public bool CheckPerson(Person person)
     {
-        
+        return false;
     }
 
     public List<Person> GetList()
     {
-       
+        return null;
     }
 }
